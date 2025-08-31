@@ -75,40 +75,40 @@ O programa segue uma sequência didática, apresentando cada conceito de forma i
 A saída do programa mostra claramente o comportamento de cada operação com ponteiros.
 
 ### Exemplo de Saída Esperada
-## === TRABALHO SOBRE PONTEIROS EM C ===
+=== TRABALHO SOBRE PONTEIROS EM C ===
 
 1. OPERADORES & E *
-- Valor de var: 42
-- Endereço de var: 0x7ffd...
-- Valor de ptr (endereço armazenado): 0x7ffd...
-- Valor apontado por ptr (*ptr): 42
-- Após *ptr = 100, valor de var: 100
+Valor de var: 42
+Endereço de var: 0x7ffd...
+Valor de ptr (endereço armazenado): 0x7ffd...
+Valor apontado por ptr (*ptr): 42
+Após *ptr = 100, valor de var: 100
 
 2. ARRAYS E PONTEIROS
-- Array original: 10 20 30 40 50 
-- Acesso via aritmética de ponteiros:
-- *(ptr + 0) = 10 (endereço: 0x7ffd...)
-- *(ptr + 1) = 20 (endereço: 0x7ffd...)
+Array original: 10 20 30 40 50 
+Acesso via aritmética de ponteiros:
+*(ptr + 0) = 10 (endereço: 0x7ffd...)
+*(ptr + 1) = 20 (endereço: 0x7ffd...)
 ...
 
 3. CHAR S[] VS CONST CHAR *
-- s1 (array): hello
-- s2 (ponteiro): World
-- s2 após reassinal: Mundo
+s1 (array): hello
+s2 (ponteiro): World
+s2 após reassinal: Mundo
 
 4. FUNÇÃO SWAP COM PONTEIROS
-- Antes do swap: x = 10, y = 20
-- Depois do swap: x = 20, y = 10
+Antes do swap: x = 10, y = 20
+Depois do swap: x = 20, y = 10
 
 5. ALOCAÇÃO DINÂMICA DE MATRIZ
-- Matriz alocada dinamicamente:
- 1  2  3  4 
- 5  6  7  8 
- 9 10 11 12 
+Matriz alocada dinamicamente:
+ 1,  2,  3,  4, 
+ 5,  6,  7,  8, 
+ 9, 10, 11, 12, 
 
 6. PONTEIRO PARA FUNÇÃO
-- Array antes da ordenação: 64 34 25 12 22 11 90 
-- Array após a ordenação: 11 12 22 25 34 64 90 
+Array antes da ordenação: 64 34 25 12 22 11 90 
+Array após a ordenação: 11 12 22 25 34 64 90 
 
 7. ARMADILHAS COMUNS
 === ARMADILHAS COMUNS ===
@@ -118,4 +118,4 @@ A saída do programa mostra claramente o comportamento de cada operação com po
 4. Vazamento de Memória:
 Estas armadilhas foram comentadas para evitar crashes!
 
-## === FIM DO PROGRAMA ===
+=== FIM DO PROGRAMA ===
