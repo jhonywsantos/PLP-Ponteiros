@@ -75,6 +75,7 @@ O programa segue uma sequência didática, apresentando cada conceito de forma i
 A saída do programa mostra claramente o comportamento de cada operação com ponteiros.
 
 ### Exemplo de Saída Esperada
+```bash
 === TRABALHO SOBRE PONTEIROS EM C ===
 
 1. OPERADORES & E *
@@ -119,3 +120,4 @@ Array após a ordenação: 11 12 22 25 34 64 90
 Estas armadilhas foram comentadas para evitar crashes!
 
 === FIM DO PROGRAMA ===
+```
