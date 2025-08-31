@@ -67,3 +67,9 @@ Este programa demonstra os conceitos fundamentais de ponteiros na linguagem C at
 ```bash
 gcc -o ponteiros ponteiros.c
 ./ponteiros
+```
+
+### Estrutura do Programa
+
+O programa segue uma sequência didática, apresentando cada conceito de forma incremental com exemplos práticos e comentários explicativos.
+A saída do programa mostra claramente o comportamento de cada operação com ponteiros.
