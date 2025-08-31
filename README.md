@@ -125,6 +125,7 @@ Estas armadilhas foram comentadas para evitar crashes!
 ```
 ---
 ### Diagrama de Memória
+
 ## Modelo de Memória em C
 ```bash
 +-----------------------+
