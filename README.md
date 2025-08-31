@@ -3,10 +3,9 @@
 # Trabalho sobre Ponteiros em C
 
 ## Descrição
-Este programa demonstra os conceitos fundamentais de ponteiros na linguagem C através de exemplos práticos e implementações funcionais. O código serve como material educativo para compreender o funcionamento, aplicações e cuidados necessários no uso de ponteiros.
+Este trabalho está sendo desenvolvido por discentes do curso de Ciência da Computação, na Universidade Federal de Alagoas (UFAL) — Campus Arapiraca, para a obtenção da nota na disciplina de Paradigmas de Linguagem de Programação (PLP) na Turma 2025.1.  Este trabalho trata-se de um programa demonstrando os conceitos fundamentais de ponteiros na linguagem C através de exemplos práticos e implementações funcionais. O código serve como material educativo para compreender o funcionamento, aplicações e cuidados necessários no uso de ponteiros.
 
-Autores: 
-- [Igor Silva](https://github.com/Southcruz), [Jhony Santos](https://github.com/jhonywsantos), [Karleandro Silva](https://github.com/karleandrosilva), [Lucas Farias](https://github.com/LucaRosendo), [Luis Correia](https://github.com/LuisGustavoCo), [Washington Gaia](https://github.com/washingmg)
+Autores: [Igor Silva](https://github.com/Southcruz), [Jhony Santos](https://github.com/jhonywsantos), [Karleandro Silva](https://github.com/karleandrosilva), [Lucas Farias](https://github.com/LucaRosendo), [Luis Correia](https://github.com/LuisGustavoCo), [Washington Gaia](https://github.com/washingmg)
 
 ---
 
