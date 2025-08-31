@@ -5,6 +5,9 @@
 ## Descrição
 Este programa demonstra os conceitos fundamentais de ponteiros na linguagem C através de exemplos práticos e implementações funcionais. O código serve como material educativo para compreender o funcionamento, aplicações e cuidados necessários no uso de ponteiros.
 
+Autores: 
+- [Igor Silva](https://github.com/Southcruz), [Jhony Santos](https://github.com/jhonywsantos), [Karleandro Silva](https://github.com/karleandro), [Lucas Farias](https://github.com/LucaRosendo), [Luis Correia](https://github.com/LuisGustavoCo), [Washington Gaia](https://github.com/washinmg)
+
 ---
 
 ## Conceitos Abordados
