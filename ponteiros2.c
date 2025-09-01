@@ -1,14 +1,14 @@
 /**
  * Trabalho sobre Ponteiros em C
  * 
- * Este programa demonstra os conceitos fundamentais de ponteiros:
- * - Declaração e uso básico
- * - Aritmética de ponteiros
- * - Alocação dinâmica de memória
- * - Passagem por referência
- * - Ponteiros para ponteiros
- * - Ponteiros para funções
- * - Armadilhas comuns
+ * Este programa demonstra conceitos fundamentais de ponteiros:
+ * - Operadores & (address-of) e * (dereference)
+ * - Relação entre arrays e ponteiros
+ * - Diferença entre char s[] e const char *
+ * - Função swap usando ponteiros (passagem por referência)
+ * - Alocação dinâmica de memória para matrizes
+ * - Ponteiros para funções (ex.: qsort)
+ * - Armadilhas comuns com ponteiros
  */
 
 #include <stdio.h>
@@ -39,16 +39,16 @@ int main() {
     demonstrar_arrays_ponteiros();
     printf("\n");
     
-    // 3. char s[] vs const char *
+    // 3. Diferença entre char s[] e const char *
     printf("3. CHAR S[] VS CONST CHAR *\n");
     demonstrar_char_array_vs_char_pointer();
     printf("\n");
     
-    // 4. Função swap com ponteiros
+    // 4. Função swap usando ponteiros
     printf("4. FUNÇÃO SWAP COM PONTEIROS\n");
     int x = 10, y = 20;
     printf("Antes do swap: x = %d, y = %d\n", x, y);
-    swap(&x, &y);
+    swap(&x, &y);  // Passando o endereço das variáveis
     printf("Depois do swap: x = %d, y = %d\n", x, y);
     printf("\n");
     
@@ -57,14 +57,14 @@ int main() {
     int linhas = 3, colunas = 4;
     int **matriz = alocar_matriz(linhas, colunas);
     
-    // Preencher matriz com valores
+    // Preencher a matriz com valores sequenciais
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             matriz[i][j] = i * colunas + j + 1;
         }
     }
     
-    // Imprimir matriz
+    // Imprimir a matriz
     printf("Matriz alocada dinamicamente:\n");
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
@@ -73,6 +73,7 @@ int main() {
         printf("\n");
     }
     
+    // Liberar a memória alocada
     liberar_matriz(matriz, linhas);
     printf("\n");
     
@@ -91,11 +92,11 @@ int main() {
 }
 
 /**
- * Demonstra o uso dos operadores & (address-of) e * (dereference)
+ * Demonstra o uso dos operadores & (endereçamento) e * (desreferência)
  */
 void demonstrar_operadores_ponteiro() {
     int var = 42;
-    int *ptr = &var; // ptr armazena o endereço de var
+    int *ptr = &var; // ptr guarda o endereço de var
     
     printf("Valor de var: %d\n", var);
     printf("Endereço de var: %p\n", (void*)&var);
@@ -108,11 +109,12 @@ void demonstrar_operadores_ponteiro() {
 }
 
 /**
- * Demonstra a relação entre arrays e ponteiros
+ * Mostra como arrays e ponteiros estão relacionados
  */
+
 void demonstrar_arrays_ponteiros() {
     int arr[5] = {10, 20, 30, 40, 50};
-    int *ptr = arr; // ptr aponta para o primeiro elemento do array
+    int *ptr = arr; // Aponta para o primeiro elemento do array
     
     printf("Array original: ");
     for (int i = 0; i < 5; i++) {
@@ -120,11 +122,10 @@ void demonstrar_arrays_ponteiros() {
     }
     printf("\n");
     
-    // Acesso através de aritmética de ponteiros
+    // Acesso usando aritmética de ponteiros
     printf("Acesso via aritmética de ponteiros:\n");
     for (int i = 0; i < 5; i++) {
-        printf("*(ptr + %d) = %d (endereço: %p)\n", 
-               i, *(ptr + i), (void*)(ptr + i));
+        printf("*(ptr + %d) = %d (endereço: %p)\n", i, *(ptr + i), (void*)(ptr + i));
     }
     
     // Diferença entre arr e &arr
@@ -134,30 +135,29 @@ void demonstrar_arrays_ponteiros() {
 }
 
 /**
- * Demonstra a diferença entre char s[] e const char *
+ * Demonstra a diferença entre array de char e ponteiro para string literal
  */
+
 void demonstrar_char_array_vs_char_pointer() {
-    // char s[] - array de caracteres (modificável)
-    char s1[] = "Hello";
-    s1[0] = 'h'; // Permitido - modifica o array
+    char s1[] = "Hello"; // Array de char: pode ser modificado
+    s1[0] = 'h';
     printf("s1 (array): %s\n", s1);
     
-    // const char * - ponteiro para string literal (não modificável)
-    const char *s2 = "World";
+    const char *s2 = "World"; // Ponteiro para string literal: não modifique!
     printf("s2 (ponteiro): %s\n", s2);
     
     // Ponteiro pode apontar para outra string
     s2 = "Mundo";
-    printf("s2 após reassinal: %s\n", s2);
+    printf("s2 após reassinalação: %s\n", s2);
     
     // Array não pode ser reassinalado
-    // s1 = "Nova string"; // ERRO: array não pode ser reassinalado
+    // s1 = "Nova string"; // ERRO
 }
 
 /**
- * Função swap que troca valores usando ponteiros
- * Demonstra passagem por referência
+ * Troca valores de duas variáveis usando ponteiros
  */
+
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
@@ -165,18 +165,19 @@ void swap(int *a, int *b) {
 }
 
 /**
- * Aloca dinamicamente uma matriz usando ponteiro para ponteiro (T**)
+ * Aloca uma matriz dinamicamente (ponteiro para ponteiro)
  */
+
 int** alocar_matriz(int linhas, int colunas) {
     int **matriz = (int**)malloc(linhas * sizeof(int*));
-    if (matriz == NULL) {
+    if (!matriz) {
         printf("Erro na alocação de memória!\n");
         exit(1);
     }
     
     for (int i = 0; i < linhas; i++) {
         matriz[i] = (int*)malloc(colunas * sizeof(int));
-        if (matriz[i] == NULL) {
+        if (!matriz[i]) {
             printf("Erro na alocação de memória!\n");
             exit(1);
         }
@@ -186,8 +187,9 @@ int** alocar_matriz(int linhas, int colunas) {
 }
 
 /**
- * Libera memória alocada para uma matriz
+ * Libera a memória alocada para uma matriz
  */
+
 void liberar_matriz(int **matriz, int linhas) {
     for (int i = 0; i < linhas; i++) {
         free(matriz[i]);
@@ -196,15 +198,17 @@ void liberar_matriz(int **matriz, int linhas) {
 }
 
 /**
- * Função de comparação para qsort
+ * Função de comparação usada pelo qsort
  */
+
 int comparar_int(const void *a, const void *b) {
     return (*(int*)a - *(int*)b);
 }
 
 /**
- * Demonstra uso de ponteiro para função com qsort
+ * Demonstra o uso de ponteiros para funções com qsort
  */
+
 void demonstrar_ponteiro_funcao() {
     int arr[] = {64, 34, 25, 12, 22, 11, 90};
     int n = sizeof(arr) / sizeof(arr[0]);
@@ -215,7 +219,7 @@ void demonstrar_ponteiro_funcao() {
     }
     printf("\n");
     
-    qsort(arr, n, sizeof(int), comparar_int);
+    qsort(arr, n, sizeof(int), comparar_int); // Ponteiro para função
     
     printf("Array após a ordenação: ");
     for (int i = 0; i < n; i++) {
@@ -225,15 +229,15 @@ void demonstrar_ponteiro_funcao() {
 }
 
 /**
- * Demonstra armadilhas comuns com ponteiros
- * Comentadas para evitar crashes
+ * Mostra armadilhas comuns com ponteiros (comentadas para evitar crashes)
  */
+
 void demonstrar_armadilhas() {
     printf("=== ARMADILHAS COMUNS ===\n");
     
-    // 1. Ponteiro selvagem (wild pointer)
+    // 1. Ponteiro selvagem: não inicializado
     printf("1. Ponteiro Selvagem:\n");
-    int *wild_ptr; // Não inicializado - comportamento indefinido
+    int *wild_ptr;
     // *wild_ptr = 5; // PERIGO
     
     // 2. Ponteiro pendurado (dangling pointer)
