@@ -156,6 +156,7 @@ O modelo é dividido em quatro segmentos principais, organizados de endereços d
 ---
 ### Aritmética de Ponteiros
 Esta imagem demonstra visualmente a "relação intrínseca entre arrays e aritmética de ponteiros", um tópico central do README.md.
+
 ![Diagrama de Aritmética de Ponteiros](https://github.com/user-attachments/assets/6070e4c1-ec3b-4e0c-8aab-49b9561d56cc)
 
 #### Fundamentos e Conceitos:
