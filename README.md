@@ -1,11 +1,11 @@
 # PLP-Ponteiros
 
-# Trabalho sobre Ponteiros em C
+# TRABALHO SOBRE PONTEIROS EM C: IMPLEMENTAÇÃO, EXPLICAÇÃO E ANÁLISE CRÍTICA
 
 ## Descrição
-Este trabalho está sendo desenvolvido por discentes do curso de Ciência da Computação, na Universidade Federal de Alagoas (UFAL) — Campus Arapiraca, para a obtenção da nota na disciplina de Paradigmas de Linguagem de Programação (PLP) na Turma 2025.1.  Este trabalho trata-se de um programa demonstrando os conceitos fundamentais de ponteiros na linguagem C através de exemplos práticos e implementações funcionais. O código serve como material educativo para compreender o funcionamento, aplicações e cuidados necessários no uso de ponteiros.
+Este trabalho está sendo desenvolvido por discentes do curso de Ciência da Computação, na Universidade Federal de Alagoas (UFAL) — Campus Arapiraca, para a obtenção da nota na disciplina de Paradigmas de Linguagem de Programação (PLP) na Turma 2025.1.  Este artigo apresenta uma análise detalhada e um guia de implementação sobre ponteiros na linguagem C, cobrindo operadores básicos, aritmética de ponteiros, arrays, comparação entre char[] e const char*, passagem por referência, alocação dinâmica de matrizes (int **), ponteiros para funções e armadilhas comuns (wild pointers, dangling pointers, double free, memory leaks). A partir do código-fonte fornecido, descreve-se o fluxo de execução, a semântica de cada função, a representação de memória (stack/heap), o comportamento esperado em tempo de execução e as possíveis falhas. Propõem-se melhorias (checagens de erro, design de API segura, padrões de liberação, uso de sizeof com expressões, atribuição de NULL após free) e estratégias de verificação (sanitizers, análise estática). Discute-se também custos iniciais de adoção (tempo de formação, instrumentação) e implicações éticas para software crítico. O documento destina-se a estudantes e profissionais que buscam compreensão prática e segura do uso de ponteiros em C.
 
-Autores: [Igor Silva](https://github.com/Southcruz), [Jhony Santos](https://github.com/jhonywsantos), [Karleandro Silva](https://github.com/karleandrosilva), [Lucas Farias](https://github.com/LucaRosendo), [Luis Correia](https://github.com/LuisGustavoCo), [Washington Gaia](https://github.com/washingmg)
+Autores: [¹Igor Mariano de Alencar e Silva](https://github.com/Southcruz), [²Jhony Wictor do Nascimento Santos](https://github.com/jhonywsantos), [³Karleandro Santos da Silva](https://github.com/karleandrosilva), [⁴Lucas Rosendo de Farias](https://github.com/LucaRosendo), [⁵Luís Gustavo Correia de Oliveira](https://github.com/LuisGustavoCo), [⁶Washington Medeiros Mazzone Gaia](https://github.com/washingmg)
 
 ---
 
