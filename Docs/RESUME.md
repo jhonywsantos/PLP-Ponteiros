@@ -414,7 +414,8 @@ A seção final ilustra, por meio de código comentado, erros perigosos e comuns
 #### **3.3.1 Diagrama de Memória**
 
 A imagem a seguir, ilustra a arquitetura de memória lógica que um sistema operacional normalmente aloca para um programa em C quando ele é executado. Entender essa separação é crucial para saber onde suas variáveis são armazenadas e como gerenciá-las.  
-![][image1]  
+![Imagem do WhatsApp de 2025-09-01 à(s) 23 15 27_a46bcd99](https://github.com/user-attachments/assets/b6a7e5be-6e01-4d86-ba7e-97333adbd1e2)
+ 
 **Figura 1\. Diagrama de Memória**
 
 **Fundamentos e Conceitos:**  
@@ -436,7 +437,8 @@ O modelo é dividido em quatro segmentos principais, organizados de endereços d
 #### **3.3.2 Diagrama de Aritmética de Ponteiros**
 
 Esta imagem demonstra visualmente a "relação intrínseca entre arrays e aritmética de ponteiros", um tópico central do README.md.  
-![][image2]  
+![Imagem do WhatsApp de 2025-09-01 à(s) 23 15 59_6ec81313](https://github.com/user-attachments/assets/718f9c49-4de3-4292-9fd1-89900e0e05be)
+
 **Figura 2\. Diagrama de Aritmética de Ponteiros**
 
 **Fundamentos e Conceitos:**
