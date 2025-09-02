@@ -155,5 +155,24 @@ O modelo é dividido em quatro segmentos principais, organizados de endereços d
  
 ---
 ### Aritmética de Ponteiros
+Esta imagem demonstra visualmente a "relação intrínseca entre arrays e aritmética de ponteiros", um tópico central do README.md.
 ![Diagrama de Aritmética de Ponteiros](https://github.com/user-attachments/assets/6070e4c1-ec3b-4e0c-8aab-49b9561d56cc)
+
+#### Fundamentos e Conceitos:
+
+1. Array em Memória Contígua
+    - Conceito: A imagem mostra um array v cujos elementos (v[0], v[1], etc.) estão armazenados em blocos de memória sequenciais e contíguos.
+    - Fundamento: A contiguidade é o que permite que a aritmética de ponteiros funcione de forma previsível. Os endereços avançam de forma regular: 1000, 1004, 1008, 1012. A diferença de 4 bytes entre cada endereço sugere que o tipo de dado do array é um int em um sistema de 32 bits, onde um int ocupa 4 bytes.
+
+2. Ponteiro para o Início do Array
+    - Conceito: A imagem exibe um ponteiro ptr que armazena o endereço do primeiro elemento do array (v[0]), que é 1000. Em C, o nome de um array, na maioria das vezes, "decai" para um ponteiro para seu primeiro elemento.
+    - Fundamento: Ter um ponteiro para o início do array permite percorrer todos os seus elementos sem precisar saber o nome do array, apenas seu tipo e seu início.
+
+3. A Aritmética em Si
+    - Conceito: A "aritmética de ponteiros" não é uma simples soma de inteiros. Quando você adiciona um número a um ponteiro, o compilador multiplica esse número pelo tamanho do tipo de dado para o qual o ponteiro aponta.
+    - Exemplo Prático com a Imagem:
+        - ptr contém o endereço 1000.
+        - A expressão ptr + 1 não resulta em 1001. Ela calcula endereço_inicial + 1 * sizeof(tipo_do_array). Assumindo um int de 4 bytes, o resultado é 1000 + 4, que é 1004 (o endereço de v[1]).
+        - Da mesma forma, ptr + 3 resultaria em 1000 + 3 * 4 = 1012 (o endereço de v[3]).
+    - Fundamento: É isso que permite o "acesso a elementos de array através de aritmética de ponteiros", como descrito no README.md. A expressão *(ptr + i) na saída de exemplo do README.md é a aplicação direta deste conceito: primeiro, calcula-se o endereço do i-ésimo elemento e, em seguida, o operador * (desreferência) acessa o valor armazenado nesse endereço.
 
