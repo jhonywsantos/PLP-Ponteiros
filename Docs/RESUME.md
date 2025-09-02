@@ -329,11 +329,11 @@ Este segmento explora a estreita relação entre arrays e ponteiros em C.
 
 Com certeza. Abaixo está uma versão aprimorada e mais detalhada do tópico 3.2, "Funcionamento do Código", com base nas informações do documento fornecido.
 
-### **3.2 Funcionamento Detalhado do Código**
+### **3.3 Funcionamento Detalhado do Código**
 
 Esta seção analisa cada módulo do programa, explicando a semântica do código, o gerenciamento de memória e as melhores práticas associadas.
 
-#### **3.2.1 Operadores de Endereçamento (&) e Desreferência (\*)**
+#### **3.3.1 Operadores de Endereçamento (&) e Desreferência (\*)**
 
 O primeiro módulo demonstra o uso fundamental dos operadores de ponteiro.
 
@@ -343,7 +343,7 @@ O primeiro módulo demonstra o uso fundamental dos operadores de ponteiro.
 4. **Representação de Memória:** Neste caso, tanto a variável var quanto o ponteiro ptr são alocados na pilha (stack).  
 5. **Recomendação de Portabilidade:** Para imprimir endereços de memória de forma segura e portável entre diferentes sistemas, é recomendado fazer a coerção (cast) do ponteiro para (void\*).
 
-#### **3.2.2 Relação entre Arrays e Aritmética de Ponteiros**
+#### **3.3.2 Relação entre Arrays e Aritmética de Ponteiros**
 
 Este segmento explora a estreita relação entre arrays e ponteiros em C.
 
@@ -355,7 +355,7 @@ Este segmento explora a estreita relação entre arrays e ponteiros em C.
    1. arr decai para um ponteiro para o primeiro elemento (int\*).  
    2. \&arr é um ponteiro para o array inteiro (tipo int (\*)\[5\]), representando todo o bloco de memória do array.
 
-#### **3.2.3 Comparativo: char\[\] vs. const char\***
+#### **3.3.3 Comparativo: char\[\] vs. const char\***
 
 O código demonstra a diferença crítica entre um array de caracteres e um ponteiro para uma string literal.
 
@@ -363,7 +363,7 @@ O código demonstra a diferença crítica entre um array de caracteres e um pont
 2. **const char \*s2 \= "World";**: Esta declaração cria um **ponteiro** que aponta para uma **string literal**. Strings literais são geralmente armazenadas em uma seção de memória somente leitura (read-only). Tentar modificar o conteúdo apontado por  s2 resulta em **comportamento indefinido**, podendo causar uma falha de segmentação.  
 3. **Prática Recomendada:** Para strings que não precisam ser alteradas, declare-as como const char\*. Se a modificação for necessária, utilize um array de caracteres ou aloque memória dinamicamente com malloc. 
 
-#### **3.2.4 Passagem por referência: função swap**
+#### **3.3.4 Passagem por referência: função swap**
 
 A função swap(int \*a, int \*b) ilustra o conceito de passagem por referência.
 
@@ -371,7 +371,7 @@ A função swap(int \*a, int \*b) ilustra o conceito de passagem por referência
 2. **Eficiência:** Este método é altamente eficiente, pois evita a cópia de grandes estruturas de dados, passando apenas seus endereços.  
 3. **Robustez da API:** Em um software de produção, é uma boa prática de programação defensiva verificar se os ponteiros recebidos como parâmetros em funções públicas não são NULL antes de usá-los, a fim de aumentar a robustez da API. 
 
-#### **3.2.5 Alocação dinâmica de matrizes (int \*\*)**
+#### **3.3.5 Alocação dinâmica de matrizes (int \*\*)**
 
 A alocação de uma matriz bidimensional é realizada por meio das funções alocar\_matriz e liberar\_matriz.
 
@@ -383,7 +383,7 @@ A alocação de uma matriz bidimensional é realizada por meio das funções alo
    1. **Alocação Linear:** Uma abordagem alternativa é alocar um único bloco de memória contíguo para todos os elementos da matriz e, em seguida, fazer com que cada ponteiro de linha aponte para o deslocamento (offset) correto dentro desse bloco.  
    2. **Tratamento de Erros:** É fundamental verificar se malloc retorna NULL. Em caso de falha na alocação de uma linha, o código deve liberar todos os recursos já alocados para evitar vazamentos de memória. 
 
-#### **3.2.6 Ponteiros para funções e qsort**
+#### **3.3.6 Ponteiros para funções e qsort**
 
 Este módulo demonstra o uso de ponteiros para funções, passando a função comparar\_int como argumento para a função de ordenação qsort da biblioteca padrão.
 
@@ -391,7 +391,7 @@ Este módulo demonstra o uso de ponteiros para funções, passando a função co
 2. **Risco de Overflow:** A implementação return (\*(int\*)a \- \*(int\*)b); é concisa, mas pode causar um **overflow de inteiro** se os valores forem muito grandes (ex: INT\_MAX e INT\_MIN).  
 3. **Implementação Robusta:** Para garantir a correção em todos os casos, a prática recomendada é retornar explicitamente os valores \-1 (se a \< b), 0 (se a \== b) ou 1 (se a \> b), evitando a subtração direta. 
 
-#### **3.2.7 Armadilhas comuns e prevenção**
+#### **3.3.7 Armadilhas comuns e prevenção**
 
 A seção final ilustra, por meio de código comentado, erros perigosos e comuns no manuseio de ponteiros.
 
@@ -409,9 +409,9 @@ A seção final ilustra, por meio de código comentado, erros perigosos e comuns
       7. Verifique sistematicamente o valor de retorno das funções de alocação de memória.  
       8. Utilize ferramentas de análise estática e sanitizers de memória (como o AddressSanitizer) durante o desenvolvimento e teste para detectar esses erros automaticamente. 
 
-## **3.3 Diagramas**
+## **3.4 Diagramas**
 
-#### **3.3.1 Diagrama de Memória**
+#### **3.4.1 Diagrama de Memória**
 
 A imagem a seguir, ilustra a arquitetura de memória lógica que um sistema operacional normalmente aloca para um programa em C quando ele é executado. Entender essa separação é crucial para saber onde suas variáveis são armazenadas e como gerenciá-las.  
 ![][image1]  
@@ -433,7 +433,7 @@ O modelo é dividido em quatro segmentos principais, organizados de endereços d
    1. Armazena variáveis locais de funções, parâmetros de funções e informações de controle para chamadas de função. Por exemplo, o char s\[\] do README.md é um array alocado na stack.  
    2. A Stack é gerenciada automaticamente pelo compilador. A memória é alocada quando uma função é chamada e liberada quando a função retorna. Ela "cresce para baixo", em direção a endereços de memória mais baixos. Se uma função chama a si mesma recursivamente muitas vezes ou declarar variáveis locais muito grandes, pode ocorrer um "estouro de pilha" (\*stack overflow). O uso de ponteiros pendurados (dangling pointers) pode ocorrer quando um ponteiro tenta acessar um endereço na stack de uma função que já retornou e cuja memória já foi liberada.
 
-#### **3.3.2 Diagrama de Aritmética de Ponteiros**
+#### **3.4.2 Diagrama de Aritmética de Ponteiros**
 
 Esta imagem demonstra visualmente a "relação intrínseca entre arrays e aritmética de ponteiros", um tópico central do README.md.  
 ![][image2]  
