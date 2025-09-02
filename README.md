@@ -180,4 +180,4 @@ Esta imagem demonstra visualmente a "relação intrínseca entre arrays e aritm�
 ### OBSERVAÇÃO
 Este README.md apresenta tópicos centrais que serão abordados no trabalho, para analisar com maior riqueza de detalhes, acesse o documento na íntegra.
 
-[ ](https://github.com/jhonywsantos/PLP-Ponteiros/blob/main/Docs/RESUME.md)
+[Docs/RESUME.md](https://github.com/jhonywsantos/PLP-Ponteiros/blob/main/Docs/RESUME.md)
