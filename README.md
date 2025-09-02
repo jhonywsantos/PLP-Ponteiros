@@ -178,6 +178,4 @@ Esta imagem demonstra visualmente a "relação intrínseca entre arrays e aritm�
     - Fundamento: É isso que permite o "acesso a elementos de array através de aritmética de ponteiros", como descrito no README.md. A expressão *(ptr + i) na saída de exemplo do README.md é a aplicação direta deste conceito: primeiro, calcula-se o endereço do i-ésimo elemento e, em seguida, o operador * (desreferência) acessa o valor armazenado nesse endereço.
 ---
 ### OBSERVAÇÃO
-Este README.md apresenta tópicos centrais que serão abordados no trabalho, para analisar com maior riqueza de detalhes, acesse o documento na íntegra.
-
-[Docs/RESUME.md](https://github.com/jhonywsantos/PLP-Ponteiros/blob/main/Docs/RESUME.md)
+Este README.md apresenta tópicos centrais que serão abordados no trabalho, para analisar com maior riqueza de detalhes, acesse o documento na íntegra em: [Docs/RESUME.md](https://github.com/jhonywsantos/PLP-Ponteiros/blob/main/Docs/RESUME.md)
