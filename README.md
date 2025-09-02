@@ -129,9 +129,30 @@ Estas armadilhas foram comentadas para evitar crashes!
 ### Diagrama de Memória
 
 ## Modelo de Memória em C
+Esta imagem ilustra a arquitetura de memória lógica que um sistema operacional normalmente aloca para um programa em C quando ele é executado. Entender essa separação é crucial para saber onde suas variáveis são armazenadas e como gerenciá-las.
 ![Diagrama de Memória](https://github.com/user-attachments/assets/5e1a601b-0f8c-4f26-8f34-2f6e9d28548b)
 
+#### Fundamentos e Conceitos:
 
+O modelo é dividido em quatro segmentos principais, organizados de endereços de memória mais baixos para mais altos:
+
+1. Código (Texto)
+    - Conceito: Esta é a área de memória onde as instruções do programa (o código de máquina compilado) são armazenadas.
+    - Fundamento: É uma área somente leitura (*read-only) para impedir que o programa modifique acidentalmente suas próprias instruções durante a execução. O README.md menciona que um const char * aponta para uma string literal que geralmente fica em memória read-only, sendo um exemplo de dado protegido contra escrita.
+
+2. Dados
+    - Conceito: Armazena variáveis globais e estáticas. Essas variáveis são inicializadas antes de o programa começar a executar e sua vida útil dura por toda a execução do programa.
+    - Fundamento: Diferente da Stack e da Heap, o tamanho deste segmento é fixo e determinado em tempo de compilação.
+
+3. Heap
+    - Conceito: É uma região de memória usada para alocação dinâmica, controlada explicitamente pelo programador através de funções como malloc e calloc. O README.md aborda isso diretamente na seção de "Alocação Dinâmica de Memória", como na criação de matrizes com int**.
+    - Fundamento: A Heap "cresce para cima", em direção a endereços de memória mais altos. O programador é totalmente responsável por gerenciar essa memória: alocar quando necessário e, crucialmente, liberar (free) quando o uso terminar. Falhas nesse gerenciamento causam as "armadilhas" citadas no README.md, como *vazamentos de memória* (falha em liberar) e *double free* (tentativa de liberar duas vezes).
+
+4. Stack (Pilha)
+   - Conceito: Armazena variáveis locais de funções, parâmetros de funções e informações de controle para chamadas de função. Por exemplo, o char s[] do README.md é um array alocado na stack.
+   - Fundamento: A Stack é gerenciada automaticamente pelo compilador. A memória é alocada quando uma função é chamada e liberada quando a função retorna. Ela "cresce para baixo", em direção a endereços de memória mais baixos. Se uma função chama a si mesma recursivamente muitas vezes ou declara variáveis locais muito grandes, pode ocorrer um "estouro de pilha" (*stack overflow). O uso de *ponteiros pendurados* (dangling pointers) pode ocorrer quando um ponteiro tenta acessar um endereço na stack de uma função que já retornou e cuja memória já foi liberada.
+
+ 
 ---
 ### Aritmética de Ponteiros
 ![Diagrama de Aritmética de Ponteiros](https://github.com/user-attachments/assets/6070e4c1-ec3b-4e0c-8aab-49b9561d56cc)
