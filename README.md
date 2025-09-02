@@ -129,35 +129,10 @@ Estas armadilhas foram comentadas para evitar crashes!
 ### Diagrama de Memória
 
 ## Modelo de Memória em C
-```bash
-+-----------------------+
-|       Stack           |  -> Variáveis locais, parâmetros de função
-|       (crescimento)   |  -> Alocação automática
-+-----------------------+
-|          |            |
-|          v            |
-|                       |
-|          ^            |
-|          |            |
-+-----------------------+
-|         Heap          |  -> Memória alocada dinamicamente (malloc, calloc)
-|       (crescimento)   |  -> Alocação manual (programador controla)
-+-----------------------+
-|   Dados Globais/      |  -> Variáveis globais e estáticas
-|      Estáticos        |  -> Alocação estática
-+-----------------------+
-|        Código         |  -> Instruções do programa (text segment)
-+-----------------------+
-```
+![Diagrama de Memória](https://github.com/user-attachments/assets/5e1a601b-0f8c-4f26-8f34-2f6e9d28548b)
+
 
 ---
 ### Aritmética de Ponteiros
-```bash
-Array: [10, 20, 30, 40, 50]
-Endereços: 1000, 1004, 1008, 1012, 1016
+![Diagrama de Aritmética de Ponteiros](https://github.com/user-attachments/assets/6070e4c1-ec3b-4e0c-8aab-49b9561d56cc)
 
-ptr = 1000 (aponta para primeiro elemento)
-ptr + 0 = 1000 -> valor 10
-ptr + 1 = 1004 -> valor 20  (avança sizeof(int) bytes)
-ptr + 2 = 1008 -> valor 30
-```
