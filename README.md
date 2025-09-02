@@ -1,4 +1,4 @@
-# PLP-Ponteiros
+# Paradigmas de Linguagem de Programação
 
 # TRABALHO SOBRE PONTEIROS EM C: IMPLEMENTAÇÃO, EXPLICAÇÃO E ANÁLISE CRÍTICA
 
